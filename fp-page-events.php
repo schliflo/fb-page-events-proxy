@@ -24,6 +24,9 @@ function getEventData($config, $fields)
             header('access-control-allow-origin: ' . $config['allowed_origins'][0]);
         }
     }
+    // set content type header
     header('content-type: application/json; charset=UTF-8');
+    // compress output
+    ob_start("ob_gzhandler");
     echo file_get_contents($requestUrl);
 }
