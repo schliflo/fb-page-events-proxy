@@ -14,7 +14,7 @@ if (isset($args['fields'])) {
 getEventData($config, $fields);
 function getEventData($config, $fields)
 {
-    $requestUrl = $config['api_base_url'] . $config['page_id'] . '/events?fields=' . $fields . '&access_token=' . $config['app_id'] . '|' . $config['app_secret'];
+    $requestUrl = $config['api_base_url'] . $config['page_id'] . '/events?fields=' . $fields . '&access_token=' . $config['access_token'];
     // check if origin is one of the allowed origins
     if (isset($config['allowed_origins'][0])) {
         if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $config['allowed_origins'])) {
